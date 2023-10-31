@@ -1,0 +1,20 @@
+name: proj_a
+on:
+  push:
+    paths:
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - '.github/workflows/proj_b.yml'
+      - 'projects/proj_b/**'
+      - 'libs/lib_hello/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: filmapp/python-monorepo/.github/actions/setup@main
+      - name: Install python packages
+        run: poetry install --sync --only dev --only proj_b
+      - name: Run tests
+        working-directory: projects/proj_b
+        run: poetry run pytest

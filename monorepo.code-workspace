@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "name": "ROOT",
+            "path": "."
+        },
+        {
+            "path": "projects/proj_a"
+        },
+        {
+            "path": "projects/proj_b"
+        },
+        {
+            "path": "projects/proj_c"
+        },
+        {
+            "path": "libs/lib_hello"
+        }
+    ]
+}

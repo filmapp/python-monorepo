@@ -1,0 +1,38 @@
+{
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "black-formatter.path": [
+        ".venv/bin/black"
+    ],
+    "black-formatter.args": [
+        "--config",
+        "pyproject.toml"
+    ],
+    "isort.path": [
+        ".venv/bin/isort",
+    ],
+    "isort.args": [
+        "--settings-path",
+        "pyproject.toml"
+    ],
+    "flake8.path": [
+        ".venv/bin/flake8"
+    ],
+    "flake8.args": [
+        "--config",
+        "setup.cfg"
+    ],
+    "mypy-type-checker.path": [
+        ".venv/bin/mypy"
+    ],
+    "mypy-type-checker.args": [
+        "--config-file",
+        "setup.cfg"
+    ]
+}

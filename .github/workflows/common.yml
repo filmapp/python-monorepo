@@ -1,0 +1,26 @@
+name: common
+on:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: filmapp/python-monorepo/.github/actions/setup@main
+      - name: Install dependencies
+        run: |
+          poetry install
+      - name: Run pysen
+        run: |
+          poetry run pysen run lint
+
+  check-wfdeps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: filmapp/python-monorepo/.github/actions/setup@main
+      - name: Install dependencies
+        run: |
+          poetry install
+      - name: check wfdeps
+        run: |
+          poetry run python tasks.py
